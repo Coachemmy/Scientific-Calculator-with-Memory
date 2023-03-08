@@ -66,8 +66,12 @@
             android:text="C"/>
         <Button
             style="@style/buttonNumber"
-            android:text="000"/>
+            android:background="@color/purple_700"
+            android:textColor="@color/white"
+            android:onClick="mStoreAction"
+            android:text="MS" />
         <Button
+            android:id="@+id/mClearButton"
             style="@style/buttonNumber"
             android:background="@color/purple_700"
             android:textColor="@color/white"
@@ -94,6 +98,7 @@
             style="@style/buttonNumber"
             android:text="9" />
         <Button
+            android:id="@+id/mrButton"
             style="@style/buttonNumber"
             android:background="@color/purple_700"
             android:textColor="@color/white"
@@ -120,6 +125,7 @@
             style="@style/buttonNumber"
             android:text="6" />
         <Button
+            android:id="@+id/mPlusButton"
             style="@style/buttonNumber"
             android:background="@color/purple_700"
             android:textColor="@color/white"
@@ -146,6 +152,7 @@
             style="@style/buttonNumber"
             android:text="3" />
         <Button
+            android:id="@+id/mMinusButton"
             style="@style/buttonNumber"
             android:background="@color/purple_700"
             android:textColor="@color/white"
@@ -179,7 +186,6 @@
             android:text="" />
         <Button
             style="@style/buttonNumber"
-            android:background="@color/purple_700"
             android:textColor="@color/white"
             android:textSize="70sp"
             android:onClick="equalsAction"

@@ -6,6 +6,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.Button
+import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity()
@@ -20,6 +21,8 @@ class MainActivity : AppCompatActivity()
     {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
 
         workingsTV.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
@@ -91,6 +94,21 @@ class MainActivity : AppCompatActivity()
     }
 
 
+    private fun setMemoryButtonState() {
+        val memoryEmpty = memoryValue == 0f
+        val buttons = listOf(mClearButton, mMinusButton, mPlusButton, mrButton)
+        for (button in buttons) {
+            button.apply {
+                isClickable = !memoryEmpty
+                setBackgroundResource(if (memoryEmpty) R.color.blue else R.color.purple_700)
+            }
+        }
+    }
+    fun mStoreAction(view: View) {
+        currentValue = calculateResults().toFloat()
+        memoryValue = currentValue
+        setMemoryButtonState()
+    }
     fun mrAction(view: View) {
         workingsTV.append(memoryValue.toString())
         canAddOperation = false
@@ -100,16 +118,19 @@ class MainActivity : AppCompatActivity()
     fun mPlusAction(view: View) {
         currentValue = calculateResults().toFloat()
         memoryValue += currentValue
+        setMemoryButtonState()
     }
 
     fun mMinusAction(view: View){
         currentValue = calculateResults().toFloat()
         memoryValue -= currentValue
+        setMemoryButtonState()
     }
 
 
     fun mClearAction(view: View) {
         memoryValue = 0f
+        setMemoryButtonState()
     }
 
     private fun calculateResults(): String

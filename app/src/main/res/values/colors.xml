@@ -2,11 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="red">#F00</color>
+    <color name="blue">#EEB8FD</color>
+    <color name="red">#C81827</color>
     <color name="almostBlack">#222</color>
     <color name="orange">#FF8c00</color>
     <color name="purple_500">#9c27b0</color>
-    <color name="purple_700">#7b1fa2</color>
+    <color name="purple_700">#480067</color>
     <color name="teal_200">#80cbc4</color>
     <color name="purple_200">#ce93d8</color>
 </resources>
